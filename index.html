@@ -7,7 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    /* ...stile invariato, puoi incollare quello che già hai... */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to right, #1f1c2c, #928dab);
@@ -20,39 +26,92 @@
       padding: 30px;
       text-align: center;
     }
-    header h1 { font-size: 3em; font-weight: 800; color: #00ffc3; }
-    header p { font-size: 1.2em; color: #cfcfcf; }
-    section { padding: 60px 20px; text-align: center; }
+    header h1 {
+      font-size: 3em;
+      font-weight: 800;
+      color: #00ffc3;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #cfcfcf;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
     .hero {
       background: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       color: #fff;
       min-height: 90vh;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-shadow: 0 2px 5px rgba(0,0,0,0.8);
       animation: fadeIn 2s ease-in;
     }
-    .hero h2 { font-size: 3em; margin-bottom: 20px; }
-    .hero p { font-size: 1.3em; max-width: 600px; }
-    .form-section { background: #121212; border-top: 4px solid #00ffc3; }
-    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; }
-    input, textarea, button {
-      padding: 15px; margin: 10px 0; border: none; border-radius: 8px; font-size: 1em;
+    .hero h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
     }
-    input, textarea { background: #1e1e1e; color: #fff; }
+    .hero p {
+      font-size: 1.3em;
+      max-width: 600px;
+    }
+    .form-section {
+      background: #121212;
+      border-top: 4px solid #00ffc3;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea, button {
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    input, textarea {
+      background: #1e1e1e;
+      color: #fff;
+    }
     button {
-      background: #00ffc3; color: #000; font-weight: bold; cursor: pointer;
+      background: #00ffc3;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
       transition: transform 0.2s ease;
     }
-    button:hover { transform: scale(1.05); }
-    footer {
-      background: #0a0a0a; padding: 20px; text-align: center; font-size: 0.9em;
+    button:hover {
+      transform: scale(1.05);
     }
-    .socials { margin: 20px 0; display: flex; justify-content: center; gap: 30px; }
+    footer {
+      background: #0a0a0a;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    .socials {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
     .socials a {
-      color: inherit; text-decoration: none; display: flex; align-items: center; justify-content: center;
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: transform 0.3s ease;
     }
-    .socials a:hover { transform: scale(1.2); }
+    .socials a:hover {
+      transform: scale(1.2);
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -73,26 +132,26 @@
   <section class="form-section">
     <h2>Contattami</h2>
     <form id="supportForm">
-      <input type="text" placeholder="Nome" name="nome" required />
-      <input type="text" placeholder="Cognome" name="cognome" required />
-      <input type="email" placeholder="Email" name="email" required />
-      <input type="tel" placeholder="Telefono" name="telefono" required />
-      <textarea placeholder="Descrivi il problema..." name="problema" rows="5" required></textarea>
+      <input type="text" placeholder="Nome" id="nome" required />
+      <input type="text" placeholder="Cognome" id="cognome" required />
+      <input type="email" placeholder="Email" id="email" required />
+      <input type="tel" placeholder="Telefono" id="telefono" required />
+      <textarea placeholder="Descrivi il problema..." id="problema" rows="5" required></textarea>
       <button type="submit">Invia Richiesta</button>
     </form>
   </section>
 
   <div class="socials">
     <a href="https://wa.me/393391624808" target="_blank" aria-label="WhatsApp">
-      <!-- SVG WhatsApp -->
+      <!-- Logo WhatsApp SVG -->
       <svg width="32" height="32" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.373 0 0 5.373 0 12a11.94 11.94 0 002.07 6.21L0 24l5.91-2.01a11.94 11.94 0 006.09 1.77c6.627 0 12-5.373 12-12 0-3.21-1.27-6.22-3.48-8.28zm-8.11 15.03a7.52 7.52 0 01-4.06-1.22l-.29-.18-3.12.83.83-3.04-.19-.3a7.54 7.54 0 011.24-10.42 7.45 7.45 0 0110.4 1.21 7.44 7.44 0 01-4.6 12.1z"/>
+        <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.373 0 0 5.373 0 12a11.94 11.94 0 002.07 6.21L0 24l5.91-2.01a11.94 11.94 0 006.09 1.77c6.627 0 12-5.373 12-12 0-3.21-1.27-6.22-3.48-8.28zm-8.11 15.03a7.52 7.52 0 01-4.06-1.22l-.29-.18-3.12.83.83-3.04-.19-.3a7.54 7.54 0 011.24-10.42 7.45 7.45 0 0110.4 1.21 7.44 7.44 0 01-4.6 12.1zm4.53-5.38c-.07-.12-.27-.18-.57-.32-.3-.13-1.77-.87-2.05-.97-.27-.1-.46-.13-.65.13-.19.27-.74.97-.91 1.17-.17.2-.33.23-.62.08-.3-.14-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.67-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.33.45-.5.15-.17.2-.28.3-.47.1-.18.05-.34-.02-.48-.07-.13-.65-1.57-.89-2.15-.23-.56-.46-.49-.65-.5-.17-.01-.37-.01-.57-.01-.19 0-.5.07-.76.34-.26.27-1 1-1 2.4 0 1.4 1.03 2.75 1.18 2.94.15.2 2.04 3.1 4.95 4.34.69.3 1.23.48 1.65.61.69.21 1.32.18 1.82.11.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42z"/>
       </svg>
     </a>
     <a href="https://instagram.com/t_ecno_lab" target="_blank" aria-label="Instagram">
-      <!-- SVG Instagram -->
+      <!-- Logo Instagram SVG -->
       <svg width="32" height="32" viewBox="0 0 24 24" fill="#E4405F" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm7.25 1.5a1 1 0 110 2 1 1 0 010-2zm-4.25 1a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"/>
+        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm7.25 1.5a1 1 0 110 2 1 1 0 010-2zm-4.25 1a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 2a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/>
       </svg>
     </a>
   </div>
@@ -102,35 +161,35 @@
   </footer>
 
   <script>
-    const supabaseUrl = 'https://ljmnxxyqsjybniszoz.supabase.co';
+    const supabaseUrl = 'https://ljmnxxyqsjybnisjozsz.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqbW54eHlxc2p5Ym5pc2pvenN6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ2NjEzMzgsImV4cCI6MjA3MDIzNzMzOH0.DYPe-h7uPcOr65GQja_Vizc4LfOJMCgxVHq_1Pn06Bo';
-    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
     const form = document.getElementById('supportForm');
-    const submitButton = form.querySelector('button');
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      submitButton.disabled = true;
-      submitButton.textContent = "Invio in corso...";
 
-      const formData = Object.fromEntries(new FormData(form));
-
-      const { error } = await supabaseClient
-        .from('richieste_utenti')
-        .insert([formData]);
+      const { nome, cognome, email, telefono, problema } = form.elements;
+      const { data, error } = await supabase.from('richieste_utenti').insert([
+        {
+          nome: nome.value,
+          cognome: cognome.value,
+          email: email.value,
+          telefono: telefono.value,
+          problema: problema.value
+        }
+      ]);
 
       if (error) {
-        alert('❌ Errore durante l\'invio: ' + error.message);
+        alert('Errore durante l\'invio: ' + error.message);
       } else {
-        alert('✅ Richiesta inviata con successo! Ti ricontatterò a breve.');
+        alert('Richiesta inviata con successo! Ti ricontatterò a breve.');
         form.reset();
       }
-
-      submitButton.disabled = false;
-      submitButton.textContent = "Invia Richiesta";
     });
   </script>
 </body>
 </html>
+
+
 
